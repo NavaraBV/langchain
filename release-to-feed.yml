@@ -11,6 +11,10 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install -r requirements.txt
+    pip install poetry
   workingDirectory: libs/langchain
   displayName: 'Install dependencies'
+
+- script: poetry build
+  workingDirectory: libs/langchain
+  displayName: 'Run poetry build'
